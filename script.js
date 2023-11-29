@@ -2,14 +2,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // DOM elements
     const currentLocationButton = document.getElementById('currentLocationButton');
     const searchLocationInput = document.getElementById('inputLocationSearch');
-    const searchBtn = document.getElementById('locationSearchButton');
+    const searchButton = document.getElementById('locationSearchButton');
     const dashboard = document.getElementById('dashboard');
     const todayContainer = document.getElementById('todayContainer');
     const tomorrowContainer = document.getElementById('tomorrowContainer');
 
     // Event listeners
     currentLocationButton.addEventListener('click', getCurrentLocation);
-    searchBtn.addEventListener('click', searchLocation);
+    searchButton.addEventListener('click', searchLocation);
 
     // Function to get current location
     function getCurrentLocation() {
@@ -80,6 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         tomorrowContainer.classList.remove('hidden');
         dashboard.classList.remove('hidden');
+
+        searchLocationInput.value = '';
     }
 
     // Function to generate HTML for each day

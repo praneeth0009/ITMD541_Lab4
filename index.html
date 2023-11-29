@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Sunrise and Sunset API Dashboard</title>
+</head>
+<body>
+    <header>   
+            <h1>Sunrise and Sunset API Dashboard</h1>
+    </header>
+    
+    <main>
+        <section id="location-section">
+            <div id="location-search">
+                <label for="location-search-input">Enter Location:</label>
+                <input type="text" id="location-search-input" placeholder="e.g., South Korea">
+                <button id="location-search-btn">Search Location</button>
+            </div>
+            <br>
+            <button id="current-location-btn">Get Current Location</button>
+        </section>
+        
+        <section id="dashboard" class="hidden">
+            <div id="today-container"></div>
+            <div id="tomorrow-container" class="hidden"></div>
+        </section>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>

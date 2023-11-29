@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     // DOM elements
-    const currentLocationBtn = document.getElementById('current-location-btn');
-    const locationSearchInput = document.getElementById('location-search-input');
-    const searchBtn = document.getElementById('location-search-btn');
+    const currentLocationButton = document.getElementById('currentLocationButton');
+    const searchLocationInput = document.getElementById('inputLocationSearch');
+    const searchBtn = document.getElementById('locationSearchButton');
     const dashboard = document.getElementById('dashboard');
-    const todayContainer = document.getElementById('today-container');
-    const tomorrowContainer = document.getElementById('tomorrow-container');
+    const todayContainer = document.getElementById('todayContainer');
+    const tomorrowContainer = document.getElementById('tomorrowContainer');
 
     // Event listeners
     currentLocationBtn.addEventListener('click', getCurrentLocation);
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to search for a location
     function searchLocation() {
-        const location = locationSearchInput.value.trim();
+        const location = searchLocationInput.value.trim();
         if (location !== '') {
             const geocodeApiUrl = `https://geocode.maps.co/search?q=${encodeURIComponent(location)}`;
             fetch(geocodeApiUrl)
@@ -85,13 +85,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to generate HTML for each day
     function generateDayHTML(day, date, sunrise, sunset, dawn, dusk, dayLength, solarNoon, timezone) {
         return `
-            <div class="container-header">${day}<br>${formatDate(date)}</div>
+            <div class="containerHeader">${day}<br>${formatDate(date)}</div>
             <img src="https://sunrisesunset.io/wp-content/uploads/2022/03/sunrise-5.svg" alt="Sunrise ${day}">
             <p>Sunrise ${day}: ${sunrise}</p>
             <p>Dawn ${day}: ${dawn}</p>
             <p>Day Length ${day}: ${dayLength}</p>
             <p>Solar Noon ${day}: ${solarNoon}</p>
-            <p>TimeZone of ${locationSearchInput.value}: ${timezone}</p>
+            <p>TimeZone of ${searchLocationInput.value}: ${timezone}</p>
             <img src="https://sunrisesunset.io/wp-content/uploads/2022/03/sunset-5.svg" alt="Sunset ${day}">
             <p>Sunset ${day}: ${sunset}</p>
             <p>Dusk ${day}: ${dusk}</p>
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to show an error message in the dashboard
     function showError(message) {
         const errorDiv = document.createElement('div');
-        errorDiv.classList.add('error-message');
+        errorDiv.classList.add('errorMessage');
         errorDiv.textContent = message;
         dashboard.innerHTML = '';
         dashboard.appendChild(errorDiv);

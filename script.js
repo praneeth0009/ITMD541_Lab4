@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const tomorrowContainer = document.getElementById('tomorrowContainer');
 
     // Event listeners
-    currentLocationBtn.addEventListener('click', getCurrentLocation);
+    currentLocationButton.addEventListener('click', getCurrentLocation);
     searchBtn.addEventListener('click', searchLocation);
 
     // Function to get current location
